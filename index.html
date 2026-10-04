@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>فايزة أحمد | نظم معلومات إدارية</title>
+
+<meta name="description" content="الموقع الشخصي لفايزة أحمد يوسف علي - طالبة نظم معلومات إدارية مهتمة بتحليل البيانات والذكاء الاصطناعي والتحول الرقمي.">
+
+<style>
+/* =========================
+   الأساسيات
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg: #070914;
+    --bg2: #0d1020;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.10);
+    --text: #ffffff;
+    --muted: #a8aec2;
+    --purple: #8b5cf6;
+    --blue: #38bdf8;
+    --pink: #ec4899;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Arial, sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(139,92,246,.18), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(56,189,248,.12), transparent 25%),
+        radial-gradient(circle at 50% 90%, rgba(236,72,153,.10), transparent 25%),
+        var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+/* =========================
+   خلفية
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255,255,255,.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.015) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+}
+
+/* =========================
+   الحاوية
+========================= */
+
+.container {
+    width: min(1120px, 92%);
+    margin: auto;
+}
+
+/* =========================
+   الهيدر
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(7,9,20,.78);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    background: linear-gradient(90deg, var(--blue), var(--purple), var(--pink));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: #d9dbea;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* =========================
+   Hero
+========================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 130px 0 70px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.badge {
+    display: inline-flex;
+    padding: 8px 15px;
+    border: 1px solid rgba(139,92,246,.35);
+    background: rgba(139,92,246,.10);
+    color: #d9c9ff;
+    border-radius: 50px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.05;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #fff, #b9a2ff, #6edaff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero h2 {
+    font-size: 20px;
+    color: var(--blue);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--purple), var(--blue));
+    box-shadow: 0 10px 30px rgba(99,102,241,.25);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,.04);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* =========================
+   بطاقة Hero
+========================= */
+
+.hero-card {
+    position: relative;
+    min-height: 430px;
+    border: 1px solid var(--border);
+    border-radius: 35px;
+    background: linear-gradient(145deg, rgba(139,92,246,.13), rgba(56,189,248,.05));
+    box-shadow: 0 30px 80px rgba(0,0,0,.35);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-circle {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--blue));
+    filter: blur(1px);
+    opacity: .85;
+    box-shadow:
+        0 0 80px rgba(139,92,246,.4),
+        0 0 120px rgba(56,189,248,.2);
+}
+
+.hero-symbol {
+    position: absolute;
+    font-size: 95px;
+    font-weight: 900;
+}
+
+.float-box {
+    position: absolute;
+    padding: 12px 17px;
+    border: 1px solid var(--border);
+    background: rgba(10,12,28,.75);
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+    font-size: 13px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.25);
+}
+
+.float-one {
+    top: 45px;
+    right: 25px;
+}
+
+.float-two {
+    bottom: 55px;
+    left: 25px;
+}
+
+.float-three {
+    bottom: 30px;
+    right: 35px;
+}
+
+/* =========================
+   Sections
+========================= */
+
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    color: var(--purple);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    margin-top: 8px;
+}
+
+.section-title p {
+    color: var(--muted);
+    max-width: 700px;
+    margin-top: 10px;
+}
+
+/* =========================
+   About
+========================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    gap: 25px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 30px;
+    backdrop-filter: blur(15px);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(139,92,246,.35);
+}
+
+.card h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--muted);
+}
+
+.info-list {
+    display: grid;
+    gap: 14px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item span:first-child {
+    color: var(--muted);
+}
+
+.info-item span:last-child {
+    font-weight: 700;
+}
+
+/* =========================
+   Skills
+========================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.skill {
+    padding: 22px;
+    border-radius: 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+}
+
+.skill-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.skill-top span:first-child {
+    font-weight: 700;
+}
+
+.skill-top span:last-child {
+    color: var(--blue);
+}
+
+.bar {
+    height: 7px;
+    background: rgba(255,255,255,.07);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    border-radius: 50px;
+    background: linear-gradient(90deg, var(--purple), var(--blue));
+}
+
+/* =========================
+   Interests
+========================= */
+
+.interests {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.interest {
+    text-align: center;
+    padding: 35px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    transition: .3s;
+}
+
+.interest:hover {
+    transform: translateY(-7px);
+}
+
+.icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.interest h3 {
+    margin-bottom: 8px;
+}
+
+.interest p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* =========================
+   Education
+========================= */
+
+.education-card {
+    position: relative;
+    padding: 35px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.education-card::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: var(--purple);
+    filter: blur(90px);
+    opacity: .15;
+    top: -70px;
+    left: -70px;
+}
+
+.education-card h3 {
+    font-size: 25px;
+}
+
+.education-card .major {
+    color: var(--blue);
+    margin: 5px 0 15px;
+    font-weight: 700;
+}
+
+.education-card p {
+    color: var(--muted);
+}
+
+/* =========================
+   Courses
+========================= */
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.course {
+    display: flex;
+    gap: 17px;
+    align-items: flex-start;
+    padding: 22px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    transition: .3s;
+}
+
+.course:hover {
+    transform: translateX(-5px);
+    border-color: rgba(56,189,248,.35);
+}
+
+.course-number {
+    min-width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--purple), var(--blue));
+    font-weight: 900;
+}
+
+.course h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.course p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =========================
+   Certificates
+========================= */
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.certificate {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .35s;
+}
+
+.certificate:hover {
+    transform: translateY(-7px);
+    border-color: rgba(139,92,246,.45);
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+}
+
+.certificate-image {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    background: #111426;
+}
+
+.certificate-info {
+    padding: 18px;
+}
+
+.certificate-info span {
+    color: var(--purple);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.certificate-info h3 {
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+/* =========================
+   Modal للشهادة
+========================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0,0,0,.88);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal img {
+    max-width: 95%;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.6);
+}
+
+.close {
+    position: fixed;
+    top: 20px;
+    left: 25px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.2);
+    background: rgba(255,255,255,.08);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* =========================
+   Career Goal
+========================= */
+
+.goal {
+    padding: 55px;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+    background:
+        radial-gradient(circle at 80% 20%, rgba(139,92,246,.18), transparent 30%),
+        radial-gradient(circle at 20% 80%, rgba(56,189,248,.12), transparent 30%),
+        var(--card);
+    text-align: center;
+}
+
+.goal h2 {
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+.goal p {
+    color: var(--muted);
+    max-width: 850px;
+    margin: auto;
+    font-size: 17px;
+}
+
+/* =========================
+   Contact
+========================= */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.contact-card {
+    padding: 28px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+}
+
+.contact-card span {
+    color: var(--muted);
+    display: block;
+    margin-bottom: 7px;
+}
+
+.contact-card a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    word-break: break-word;
+}
+
+/* =========================
+   Footer
+========================= */
+
+footer {
+    padding: 35px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 850px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+        min-height: 350px;
+    }
+
+    .interests {
+        grid-template-columns: 1fr;
+    }
+
+    .certificates-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 75px 0;
+    }
+
+    .hero {
+        padding-top: 110px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .skills-grid,
+    .courses-grid,
+    .contact-grid,
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card,
+    .goal {
+        padding: 24px;
+    }
+
+    .certificate-image {
+        height: 260px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+    <div class="container navbar">
+
+        <div class="logo">فايزة.</div>
+
+        <nav>
+            <a href="#home">الرئيسية</a>
+            <a href="#about">من أنا</a>
+            <a href="#skills">المهارات</a>
+            <a href="#courses">الدورات</a>
+            <a href="#certificates">الشهادات</a>
+            <a href="#contact">تواصل</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<main>
+
+<section class="hero" id="home">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <div class="badge">
+                طالبة نظم معلومات إدارية • MIS
+            </div>
+
+            <h1>
+                مرحبًا، أنا
+                <span class="gradient-text">
+                    فايزة أحمد
+                </span>
+            </h1>
+
+            <h2>
+                Management Information Systems Student
+            </h2>
+
+            <p>
+                أنا فايزة أحمد يوسف علي، طالبة نظم معلومات إدارية (MIS).
+                أسعى لدمج المعرفة الإدارية بالتقنيات الحديثة لتحليل البيانات
+                واتخاذ القرارات الذكية، وأطمح للمساهمة في التحول الرقمي
+                وتطوير الأنظمة التي تدعم كفاءة المؤسسات.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#about" class="btn btn-primary">
+                    اكتشفي قصتي
+                </a>
+
+                <a href="#certificates" class="btn btn-secondary">
+                    شهاداتي ودوراتي
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="hero-circle"></div>
+
+            <div class="hero-symbol">
+                ✦
+            </div>
+
+            <div class="float-box float-one">
+                📊 Data Analysis
+            </div>
+
+            <div class="float-box float-two">
+                🤖 Digital & AI
+            </div>
+
+            <div class="float-box float-three">
+                💻 MIS
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>ABOUT ME</span>
+            <h2>من أنا؟</h2>
+            <p>
+                مزيج بين الإدارة والتقنية وتحليل البيانات.
+            </p>
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="card">
+
+                <h3>نبذة عني</h3>
+
+                <p>
+                    أنا فايزة أحمد يوسف علي، طالبة بكالوريوس في تخصص
+                    نظم المعلومات الإدارية. أهتم بتطوير مهاراتي التقنية
+                    والإدارية، وخاصة في مجالات تحليل البيانات، الذكاء
+                    الاصطناعي، الأنظمة والتحول الرقمي.
+                </p>
+
+                <br>
+
+                <p>
+                    أؤمن بأن الجمع بين فهم الأعمال والتقنية يساعد على
+                    بناء حلول أكثر ذكاءً وفعالية، لذلك أعمل باستمرار
+                    على تطوير معرفتي ومهاراتي من خلال الدورات والتدريب
+                    والمشاريع التعليمية.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>معلوماتي</h3>
+
+                <div class="info-list">
+
+                    <div class="info-item">
+                        <span>الاسم</span>
+                        <span>فايزة أحمد يوسف علي</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span>التخصص</span>
+                        <span>MIS</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span>المرحلة</span>
+                        <span>بكالوريوس</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span>المجال</span>
+                        <span>إدارة وتقنية</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>MY SKILLS</span>
+            <h2>مهاراتي</h2>
+            <p>
+                مجموعة من المهارات التي أعمل على تطويرها باستمرار.
+            </p>
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill">
+                <div class="skill-top">
+                    <span>تحليل البيانات باستخدام Excel وPower BI</span>
+                    <span>85%</span>
+                </div>
+                <div class="bar">
+                    <div class="fill" style="width:85%"></div>
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-top">
+                    <span>إدارة قواعد البيانات SQL</span>
+                    <span>75%</span>
+                </div>
+                <div class="bar">
+                    <div class="fill" style="width:75%"></div>
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-top">
+                    <span>الذكاء الاصطناعي في الإدارة</span>
+                    <span>80%</span>
+                </div>
+                <div class="bar">
+                    <div class="fill" style="width:80%"></div>
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-top">
+                    <span>إعداد التقارير والعروض</span>
+                    <span>90%</span>
+                </div>
+                <div class="bar">
+                    <div class="fill" style="width:90%"></div>
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-top">
+                    <span>التفكير التحليلي</span>
+                    <span>90%</span>
+                </div>
+                <div class="bar">
+                    <div class="fill" style="width:90%"></div>
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-top">
+                    <span>اتخاذ القرار</span>
+                    <span>85%</span>
+                </div>
+                <div class="bar">
+                    <div class="fill" style="width:85%"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INTERESTS
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>INTERESTS</span>
+            <h2>مجالات أهتم بها</h2>
+        </div>
+
+
+        <div class="interests">
+
+            <div class="interest">
+                <div class="icon">📊</div>
+                <h3>تحليل البيانات</h3>
+                <p>
+                    تحويل البيانات إلى معلومات تساعد على فهم الأعمال
+                    ودعم اتخاذ القرار.
+                </p>
+            </div>
+
+
+            <div class="interest">
+                <div class="icon">🤖</div>
+                <h3>الذكاء الاصطناعي</h3>
+                <p>
+                    استكشاف تطبيقات الذكاء الاصطناعي في الإدارة
+                    وتحسين الأعمال.
+                </p>
+            </div>
+
+
+            <div class="interest">
+                <div class="icon">💻</div>
+                <h3>تطوير الأنظمة</h3>
+                <p>
+                    الاهتمام بالأنظمة التقنية التي تساعد المؤسسات
+                    على العمل بكفاءة.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>EDUCATION</span>
+            <h2>التعليم</h2>
+        </div>
+
+
+        <div class="education-card">
+
+            <h3>
+                بكالوريوس نظم المعلومات الإدارية
+            </h3>
+
+            <div class="major">
+                Management Information Systems — MIS
+            </div>
+
+            <p>
+                طالبة بكالوريوس، أعمل على بناء قاعدة معرفية تجمع
+                بين الإدارة والتقنية وتحليل البيانات والأنظمة الرقمية.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     COURSES
+========================= -->
+
+<section id="courses">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>COURSES</span>
+            <h2>الدورات والشهادات</h2>
+            <p>
+                رحلتي في التعلم المستمر وتطوير المهارات المهنية والتقنية.
+            </p>
+        </div>
+
+
+        <div class="courses-grid">
+
+            <div class="course">
+                <div class="course-number">01</div>
+                <div>
+                    <h3>CS50’s Introduction to Programming with Python</h3>
+                    <p>HarvardX</p>
+                </div>
+            </div>
+
+
+            <div class="course">
+                <div class="course-number">02</div>
+                <div>
+                    <h3>استخدام أدوات الذكاء الاصطناعي</h3>
+                    <p>Artificial Intelligence Tools</p>
+                </div>
+            </div>
+
+
+            <div class="course">
+                <div class="course-number">03</div>
+                <div>
+                    <h3>استخدام الذكاء الاصطناعي في التحليل المالي</h3>
+                    <p>AI & Financial Analysis</p>
+                </div>
+            </div>
+
+
+            <div class="course">
+                <div class="course-number">04</div>
+                <div>
+                    <h3>إطلاق مشروع مالي بواسطة الذكاء الاصطناعي</h3>
+                    <p>AI & Financial Projects</p>
+                </div>
+            </div>
+
+
+            <div class="course">
+                <div class="course-number">05</div>
+                <div>
+                    <h3>المهارات الناعمة في سوق العمل</h3>
+                    <p>Soft Skills</p>
+                </div>
+            </div>
+
+
+            <div class="course">
+                <div class="course-number">06</div>
+                <div>
+                    <h3>حماية البيانات</h3>
+                    <p>Data Protection</p>
+                </div>
+            </div>
+
+
+            <div class="course">
+                <div class="course-number">07</div>
+                <div>
+                    <h3>مقدمة في لغة الباحثون</h3>
+                    <p>Introduction Course</p>
+                </div>
+            </div>
+
+
+            <div class="course">
+                <div class="course-number">08</div>
+                <div>
+                    <h3>ورشة عمل في جامعة الملك سعود</h3>
+                    <p>Workshop</p>
+                </div>
+            </div>
+
+
+            <div class="course">
+                <div class="course-number">09</div>
+                <div>
+                    <h3>تحليل بيانات Power BI والهندسة الصناعية وإدارة العمليات بنجاح</h3>
+                    <p>Power BI & Operations</p>
+                </div>
+            </div>
+
+
+            <div class="course">
+                <div class="course-number">10</div>
+                <div>
+                    <h3>مقدمة في الحوكمة وإدارة المخاطر</h3>
+                    <p>Governance & Risk Management</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CERTIFICATES
+========================= -->
+
+<section id="certificates">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>CERTIFICATES</span>
+            <h2>شهاداتي</h2>
+            <p>
+                مجموعة من الشهادات والإنجازات التي حصلت عليها خلال رحلتي التعليمية.
+                اضغطي على أي شهادة لمشاهدتها بحجم أكبر.
+            </p>
+        </div>
+
+
+        <div class="certificates-grid">
+
+
+            <!-- الشهادة 1 -->
+
+            <div class="certificate"
+                 onclick="openCertificate('IMG_1766.jpeg')">
+
+                <img
+                    src="IMG_1766.jpeg"
+                    class="certificate-image"
+                    alt="الشهادة الأولى"
+                >
+
+                <div class="certificate-info">
+                    <span>CERTIFICATE 01</span>
+                    <h3>شهادة تدريبية</h3>
+                </div>
+
+            </div>
+
+
+            <!-- الشهادة 2 -->
+
+            <div class="certificate"
+                 onclick="openCertificate('IMG_1881.png')">
+
+                <img
+                    src="IMG_1881.png"
+                    class="certificate-image"
+                    alt="الشهادة الثانية"
+                >
+
+                <div class="certificate-info">
+                    <span>CERTIFICATE 02</span>
+                    <h3>شهادة تدريبية</h3>
+                </div>
+
+            </div>
+
+
+            <!-- الشهادة 3 -->
+
+            <div class="certificate"
+                 onclick="openCertificate('IMG_1882.png')">
+
+                <img
+                    src="IMG_1882.png"
+                    class="certificate-image"
+                    alt="الشهادة الثالثة"
+                >
+
+                <div class="certificate-info">
+                    <span>CERTIFICATE 03</span>
+                    <h3>شهادة تدريبية</h3>
+                </div>
+
+            </div>
+
+
+            <!-- الشهادة 4 -->
+
+            <div class="certificate"
+                 onclick="openCertificate('IMG_1883.png')">
+
+                <img
+                    src="IMG_1883.png"
+                    class="certificate-image"
+                    alt="الشهادة الرابعة"
+                >
+
+                <div class="certificate-info">
+                    <span>CERTIFICATE 04</span>
+                    <h3>شهادة تدريبية</h3>
+                </div>
+
+            </div>
+
+
+            <!-- الشهادة 5 -->
+
+            <div class="certificate"
+                 onclick="openCertificate('IMG_1884.png')">
+
+                <img
+                    src="IMG_1884.png"
+                    class="certificate-image"
+                    alt="الشهادة الخامسة"
+                >
+
+                <div class="certificate-info">
+                    <span>CERTIFICATE 05</span>
+                    <h3>شهادة تدريبية</h3>
+                </div>
+
+            </div>
+
+
+            <!-- الشهادة 6 -->
+
+            <div class="certificate"
+                 onclick="openCertificate('IMG_1885.png')">
+
+                <img
+                    src="IMG_1885.png"
+                    class="certificate-image"
+                    alt="الشهادة السادسة"
+                >
+
+                <div class="certificate-info">
+                    <span>CERTIFICATE 06</span>
+                    <h3>شهادة تدريبية</h3>
+                </div>
+
+            </div>
+
+
+            <!-- الشهادة 7 -->
+
+            <div class="certificate"
+                 onclick="openCertificate('IMG_1886.png')">
+
+                <img
+                    src="IMG_1886.png"
+                    class="certificate-image"
+                    alt="الشهادة السابعة"
+                >
+
+                <div class="certificate-info">
+                    <span>CERTIFICATE 07</span>
+                    <h3>شهادة تدريبية</h3>
+                </div>
+
+            </div>
+
+
+            <!-- الشهادة 8 -->
+
+            <div class="certificate"
+                 onclick="openCertificate('IMG_1887.png')">
+
+                <img
+                    src="IMG_1887.png"
+                    class="certificate-image"
+                    alt="الشهادة الثامنة"
+                >
+
+                <div class="certificate-info">
+                    <span>CERTIFICATE 08</span>
+                    <h3>شهادة تدريبية</h3>
+                </div>
+
+            </div>
+
+
+            <!-- الشهادة 9 -->
+
+            <div class="certificate"
+                 onclick="openCertificate('IMG_1889.png')">
+
+                <img
+                    src="IMG_1889.png"
+                    class="certificate-image"
+                    alt="الشهادة التاسعة"
+                >
+
+                <div class="certificate-info">
+                    <span>CERTIFICATE 09</span>
+                    <h3>شهادة تدريبية</h3>
+                </div>
+
+            </div>
+
+
+            <!-- الشهادة 10 -->
+
+            <div class="certificate"
+                 onclick="openCertificate('IMG_1888.png')">
+
+                <img
+                    src="IMG_1888.png"
+                    class="certificate-image"
+                    alt="الشهادة العاشرة"
+                >
+
+                <div class="certificate-info">
+                    <span>CERTIFICATE 10</span>
+                    <h3>شهادة تدريبية</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CAREER GOAL
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="goal">
+
+            <h2>طموحي المهني 🎯</h2>
+
+            <p>
+                أطمح إلى بناء مسار مهني يجمع بين نظم المعلومات،
+                تحليل البيانات، الذكاء الاصطناعي والإدارة الرقمية،
+                والمساهمة في تطوير حلول تقنية تساعد المؤسسات على
+                اتخاذ قرارات أكثر ذكاءً ورفع كفاءتها في عصر التحول الرقمي.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>CONTACT</span>
+            <h2>تواصل معي</h2>
+            <p>
+                يسعدني التواصل والتعرف على فرص تعليمية ومهنية جديدة.
+            </p>
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <span>البريد الإلكتروني</span>
+
+                <a href="mailto:Fzfz1425@gmail.com">
+                    Fzfz1425@gmail.com
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <span>التخصص</span>
+
+                <a href="#home">
+                    Management Information Systems
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     MODAL
+========================= -->
+
+<div class="modal" id="certificateModal">
+
+    <button class="close" onclick="closeCertificate()">
+        ×
+    </button>
+
+    <img id="modalImage" src="" alt="عرض الشهادة">
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
+        © 2026 فايزة أحمد يوسف علي
+        <br>
+        نظم المعلومات الإدارية • MIS
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+function openCertificate(image) {
+
+    document.getElementById("modalImage").src = image;
+
+    document
+        .getElementById("certificateModal")
+        .classList.add("active");
+}
+
+
+function closeCertificate() {
+
+    document
+        .getElementById("certificateModal")
+        .classList.remove("active");
+
+    document.getElementById("modalImage").src = "";
+}
+
+
+document
+    .getElementById("certificateModal")
+    .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+            closeCertificate();
+        }
+
+    });
+
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        closeCertificate();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
